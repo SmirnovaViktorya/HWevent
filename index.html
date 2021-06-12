@@ -6,5 +6,586 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body></body>
+  <body>
+    <h2 style="text-align: center; color: blue">Презентация</h2>
+    <!-- Презентация TASK 1 -->
+    <h3>
+      1. Сделайте так, чтобы по клику на первую кнопку на экран выводилось число
+      1, по клику на вторую - число 2, а по клику на третью - число 3.
+    </h3>
+    <input id="button1" type="submit" />
+    <input id="button2" type="submit" />
+    <input id="button3" type="submit" />
+
+    <script>
+      document.querySelector("#button1").addEventListener("click", function () {
+        alert("1");
+      });
+
+      document.querySelector("#button2").addEventListener("click", function () {
+        alert("2");
+      });
+
+      document.querySelector("#button3").addEventListener("click", function () {
+        alert("3");
+      });
+    </script>
+
+    <!-- // Презентация TASK 2 -->
+    <h3>
+      2. Сделайте так, чтобы по клику на первую кнопку выполнилась функция
+      func1, а по клику на вторую - функция func2.
+    </h3>
+
+    <input id="but1" type="submit" value="1" />
+    <input id="but2" type="submit" value="2" />
+
+    <script>
+      function func1() {
+        console.log(1);
+      }
+      function func2() {
+        console.log(2);
+      }
+
+      document.querySelector("#but1").addEventListener("click", func1);
+      document.querySelector("#but2").addEventListener("click", func2);
+    </script>
+
+    <!-- // Презентация TASK 3 -->
+    <h3>
+      3. Даны два абзаца, содержащие своим текстом какие-то числа, и кнопка. По
+      нажатию на кнопку выведите на экран сумму хранящихся чисел.
+    </h3>
+    <p id="term1">25</p>
+    <p id="term2">8</p>
+    <input id="sum" type="submit" value="sum" />
+
+    <script>
+      sum.addEventListener("click", function () {
+        alert(
+          `Сумма чисел: ${
+            +document.querySelector("#term1").innerHTML +
+            +document.querySelector("#term2").innerHTML
+          }`
+        );
+      });
+    </script>
+
+    <!-- // Презентация TASK 4 -->
+    <h3>
+      4. Дана картинка в теге img и кнопка. Пусть в атрибуте width задана
+      некоторая ширина. Сделайте кнопку, по нажатию на которую ширина картинки
+      будет увеличиваться в 2 раза.
+    </h3>
+    <img id="img" src="img/image.png" width="200" height="100" /><br />
+    <input id="imgBtn" type="submit" value="width * 2" />
+
+    <script>
+      let img = document.querySelector("#img");
+      document.querySelector("#imgBtn").addEventListener("click", function () {
+        img.width = img.width * 2;
+      });
+    </script>
+
+    <!-- // Презентация TASK 5 -->
+    <h3>
+      5. Дан инпут и кнопка. По нажатию на кнопку запишите в инпут какой- нибудь
+      текст.
+    </h3>
+    <input id="text1" type="text" />
+    <input id="addText" type="submit" value="Записать" />
+    <script>
+      document.querySelector("#addText").addEventListener("click", function () {
+        document.querySelector("#text1").value = "Какой-нибудь текст";
+      });
+    </script>
+
+    <!-- // Презентация TASK 6 -->
+
+    <h3>6. По нажатию на кнопку нужно показать список или снова спрятать.</h3>
+    <input id="showList" type="submit" value="Показать / Спрятать" />
+    <ul id="list" hidden="false">
+      <li>A</li>
+      <li>B</li>
+      <li>C</li>
+    </ul>
+    <script>
+      let list = document.querySelector("#list");
+      document
+        .querySelector("#showList")
+        .addEventListener("click", function () {
+          if (list.hidden) {
+            list.hidden = false;
+          } else list.hidden = true;
+        });
+    </script>
+
+    <h2 style="text-align: center; color: blue">Домашее задание</h2>
+
+    <!-- // ДЗ TASK 1 -->
+    <h3>
+      1. Даны два абзаца и две кнопки. Пусть нажатие на первую кнопку выводит
+      текст первого абзаца, а нажатие на вторую кнопку - текст второго абзаца.
+    </h3>
+    <p id="tex1">ABC</p>
+    <p id="tex2">abc</p>
+    <input id="p1" type="submit" value="Первый" />
+    <input id="p2" type="submit" value="Второй" />
+    <script>
+      document.querySelector("#p1").addEventListener("click", function () {
+        alert(document.querySelector("#tex1").innerHTML);
+      });
+      document.querySelector("#p2").addEventListener("click", function () {
+        alert(document.querySelector("#tex2").innerHTML);
+      });
+    </script>
+
+    <!-- // ДЗ TASK 2 -->
+    <h3>
+      2. Дан абзац и две кнопки. По нажатию на первую кнопку запишите в абзац
+      слово 'привет', а по нажатию на вторую кнопку - слово 'пока'.
+    </h3>
+    <p id="inp"></p>
+    <input id="b1" type="submit" value="Привет" />
+    <input id="b2" type="submit" value="Пока" />
+
+    <script>
+      document.querySelector("#b1").addEventListener("click", function () {
+        document.querySelector("#inp").innerHTML = "Привет";
+      });
+      document.querySelector("#b2").addEventListener("click", function () {
+        document.querySelector("#inp").innerHTML = "Пока";
+      });
+    </script>
+
+    <!-- // ДЗ TASK 3 -->
+    <h3>
+      3. Даны 3 абзаца с текстом. По нажатию на первый абзац запишите в его
+      текст число 1, по нажатию на второй абзац запишите в его текст число 2, а
+      по нажатию на третий - запишите в его текст число 3.
+    </h3>
+    <p id="inp1">A</p>
+    <p id="inp2">B</p>
+    <p id="inp3">C</p>
+    <script>
+      document.querySelector("#inp1").addEventListener("click", function () {
+        document.querySelector("#inp1").innerHTML = "1";
+      });
+      document.querySelector("#inp2").addEventListener("click", function () {
+        document.querySelector("#inp2").innerHTML = "2";
+      });
+      document.querySelector("#inp3").addEventListener("click", function () {
+        document.querySelector("#inp3").innerHTML = "3";
+      });
+    </script>
+
+    <!-- // ДЗ TASK 4 -->
+    <h3>
+      4. Дан абзац и кнопка. В абзаце записано какое-то число. По нажатию на
+      кнопку возведите значение абзаца в квадрат и запишите его обратно.
+    </h3>
+    <p id="num">2</p>
+    <input id="pow" type="submit" value="Степень" />
+    <script>
+      document.querySelector("#pow").addEventListener("click", function () {
+        let n = document.querySelector("#num").innerHTML;
+        n = +n;
+        document.querySelector("#num").innerHTML = n ** 2;
+      });
+    </script>
+
+    <!-- // ДЗ TASK 5 -->
+    <h3>
+      5. Дан абзац с числом и кнопка. По нажатию на кнопку прибавьте к значению
+      абзаца единицу и запишите полученное число обратно.
+    </h3>
+    <p id="num1">0</p>
+    <input id="plus" type="submit" value="Прибавить" />
+    <script>
+      document.querySelector("#plus").addEventListener("click", function () {
+        let n = document.querySelector("#num1").innerHTML;
+        n = +n;
+        document.querySelector("#num1").innerHTML = n + 1;
+      });
+    </script>
+
+    <!-- // ДЗ TASK 6 -->
+    <h3>
+      6. Дан абзац с текстом и кнопка. По нажатию на кнопку запишите в конец
+      текста абзаца восклицательный знак.
+    </h3>
+    <p id="str">ABC</p>
+    <input id="plus1" type="submit" value="Добавить" />
+    <script>
+      document.querySelector("#plus1").addEventListener("click", function () {
+        document.querySelector("#str").innerHTML += "!";
+      });
+    </script>
+
+    <!-- // ДЗ TASK 7 -->
+    <h3>
+      7. Модифицируйте предыдущую задачу так, чтобы восклицательный знак
+      записывался не в конец текста, а в начало.
+    </h3>
+    <p id="str1">ABC</p>
+    <input id="plus2" type="submit" value="Добавить" />
+    <script>
+      document.querySelector("#plus2").addEventListener("click", function () {
+        let str = document.querySelector("#str1").innerHTML;
+        document.querySelector("#str1").innerHTML = "!" + str;
+      });
+    </script>
+
+    <!-- // ДЗ TASK 8 -->
+    <h3>
+      8. Дан абзац с текстом и кнопка. По нажатию на кнопку прочитайте текст
+      абзаца, оберните этот текст в теги b и запишите новый текст обратно в
+      абзац.
+    </h3>
+    <p id="s">ABC</p>
+    <input id="addB" type="submit" value="Обернуть" />
+    <script>
+      document.querySelector("#addB").addEventListener("click", function () {
+        let str = document.querySelector("#s").innerHTML;
+        document.querySelector("#s").innerHTML = "<b>" + str + "</b>";
+      });
+    </script>
+
+    <!-- // ДЗ TASK 9 -->
+    <h3>
+      9. Дана картинка в теге img и кнопка. По нажатию на кнопку в атрибут width
+      запишите значение 300.
+    </h3>
+    <img id="img1" src="img/image.png" width="100" height="50" /><br />
+    <input id="imgBtn1" type="submit" value="width =300" />
+    <script>
+      document.querySelector("#imgBtn1").addEventListener("click", function () {
+        document.querySelector("#img1").width = 300;
+      });
+    </script>
+
+    <!-- // ДЗ TASK 10 -->
+    <h3>
+      10. Сделайте кнопку, нажатие на которую будет выводить текущий текст
+      инпута. После захода на страницу нажмите на кнопку, чтобы увидеть текущий
+      текст инпута, затем отредактируйте текст в инпуте и еще раз нажмите на
+      кнопку. Убедитесь в том, что выведется новый текст инпута.
+    </h3>
+    <input id="text2" type="text" value="Hello" />
+    <input id="readText" type="submit" value="Текущий текст" />
+    <script>
+      document
+        .querySelector("#readText")
+        .addEventListener("click", function () {
+          alert(document.querySelector("#text2").value);
+        });
+    </script>
+
+    <!-- // ДЗ TASK 11 -->
+    <h3>
+      11. Даны 5 инпутов, абзац и кнопка. В инпут вводятся числа. По нажатию на
+      кнопку запишите среднее арифметическое введенных чисел в абзац.
+    </h3>
+
+    <input id="i1" type="text" value="1" /><br />
+    <input id="i2" type="text" value="2" /><br />
+    <input id="i3" type="text" value="3" /><br />
+    <input id="i4" type="text" value="4" /><br />
+    <input id="i5" type="text" value="5" /><br />
+    <input id="average" type="submit" value="Среднее арифметическое" />
+    <p id="res"></p>
+
+    <script>
+      document.querySelector("#average").addEventListener("click", function () {
+        let arr = document.querySelectorAll("#i1, #i2, #i3, #i4, #i5");
+        let res = 0;
+        for (let i = 0; i < arr.length; i++) {
+          res += +arr[i].value;
+        }
+        document.querySelector("#res").innerHTML = res / arr.length;
+      });
+    </script>
+
+    <!-- // ДЗ TASK 12 -->
+    <h3>
+      12. Дана ссылка. По нажатию на эту ссылку добавьте в конец ее текста
+      содержимое ее атрибута href в круглых скобках. Сделайте так, чтобы это
+      добавление происходило лишь по первому нажатию. (Нужно использовать
+      отвязку события)
+    </h3>
+    <a id="a" href="">Ссылка</a>
+    <script>
+      let a = document.querySelector("#a");
+      function fun(event) {
+        event.preventDefault();
+        a.innerHTML += "(" + a.href + ")";
+        a.removeEventListener("click", fun);
+      }
+      a.addEventListener("click", fun);
+    </script>
+
+    <!-- // ДЗ TASK 13 -->
+    <h3>
+      13. Дана кнопка, значением которой служит число 1. Сделайте так, чтобы по
+      клику на эту кнопку ее значение каждый раз увеличивалось на единицу. После
+      того, как значение кнопки достигнет 10 - отвяжите обработчик события,
+      чтобы кнопка больше не реагировала на нажатие.
+    </h3>
+    <input id="button" type="submit" value="1" />
+    <script>
+      let button = document.querySelector("#button");
+      function funPlus() {
+        let n = +button.value++;
+
+        if (n == 9) {
+          button.removeEventListener("click", funPlus);
+        }
+      }
+      button.addEventListener("click", funPlus);
+    </script>
+
+    <!-- // ДЗ TASK 14 -->
+    <h3>
+      14. Даны абзацы. По нажатию на любой из абзацев добавьте ему в конец
+      восклицательный знак. Сделайте так, чтобы это добавление происходило лишь
+      по первому нажатию.
+    </h3>
+    <div>
+      <p>111</p>
+      <p>222</p>
+      <p>333</p>
+      <p>444</p>
+      <p>555</p>
+    </div>
+    <script>
+      let elems = document.querySelectorAll("div p");
+
+      function foo() {
+        this.innerHTML += "!";
+        this.removeEventListener("click", foo);
+      }
+      for (let i of elems) {
+        i.addEventListener("click", foo);
+      }
+    </script>
+
+    <!-- // ДЗ TASK 15 -->
+    <h3>
+      15. Дан инпут с каким-то начальным значением. Пусть пользователь меняет
+      это значение. Сделайте рядом с инпутом кнопку, по нажатию на которую value
+      инпута вернется в изначальное значение.
+    </h3>
+    <input id="elem" value="start" />
+    <input id="but" type="submit" value="Вернуть" />
+    <script>
+      document.querySelector("#but").addEventListener("click", function () {
+        let val = elem.getAttribute("value");
+        document.querySelector("#elem").value = val;
+      });
+    </script>
+
+    <!-- // ДЗ TASK 16 -->
+    <h3>
+      16. Дана кнопка. Сделайте так, чтобы эта кнопка считала количество кликов
+      по ней, записывая их в какой-нибудь пользовательский атрибут. Пусть по
+      двойному клику на эту кнопку на экран выводится, сколько кликов по этой
+      кнопке было сделано.
+    </h3>
+    <input id="numb" type="submit" data-counter="0" value="Счетчик" />
+    <script>
+      let butNum = document.querySelector("#numb");
+
+      butNum.addEventListener("click", function () {
+        let s = +butNum.dataset.counter;
+        s++;
+        butNum.dataset.counter = s;
+      });
+
+      butNum.addEventListener("dblclick", function () {
+        alert(`Кнопка была нажата ${butNum.dataset.counter} раз`);
+      });
+    </script>
+
+    <!-- // ДЗ TASK 17 -->
+    <h3>
+      17. Даны абзацы. Переберите их циклом и каждому абзацу в атрибут data-num
+      запишите порядковый номер этого абзаца. Используйте метод setAttribute.
+    </h3>
+    <p class="task17"></p>
+    <p class="task17"></p>
+    <p class="task17"></p>
+    <p class="task17"></p>
+    <p class="task17"></p>
+    <p class="task17"></p>
+    <p class="task17"></p>
+    <p class="task17"></p>
+    <p class="task17"></p>
+    <p class="task17"></p>
+    <script>
+      let array = document.querySelectorAll(".task17");
+      for (let i = 0; i < array.length; i++) {
+        array[i].setAttribute("num", i + 1);
+        console.log(array[i]);
+      }
+    </script>
+
+    <!-- // ДЗ TASK 19 -->
+    <h3>
+      19. Дан инпут. В него вводится слово. По нажатию на кнопку проверьте то,
+      что это слово читается с начала и с конца одинаково (например, мадам).
+    </h3>
+    <input id="word" value="" />
+    <input id="butt" type="submit" value="Проверить" />
+    <script>
+      document.querySelector("#butt").addEventListener("click", function () {
+        let word = document.querySelector("#word").value;
+        let reverseWord = word.split("").reverse().join("");
+        if (word == reverseWord) {
+          alert(`Слово является палиндромом`);
+        } else alert(`Слово не является палиндромом`);
+        document.querySelector("#word").value = "";
+      });
+    </script>
+
+    <!-- // ДЗ TASK 20 -->
+    <h3>
+      20. В инпут вводится страна и нажимается Enter. По нажатию на Enter
+      сделайте так, чтобы введенные страны записывались в абзац под инпутом
+      через запятую. То есть по каждому нажатию Enter в абзац будут добавляться
+      все новые и новые страны.
+    </h3>
+    <input id="inpC" value="" />
+    <p id="listC"></p>
+    <script>
+      document
+        .querySelector("#inpC")
+        .addEventListener("keydown", function (event) {
+          if (event.keyCode == 13) {
+            console.log(this.value);
+            document.querySelector("#listC").innerHTML += `${this.value}, `;
+            this.value = "";
+          }
+        });
+    </script>
+
+    <!-- // ДЗ TASK 21 -->
+    <h3>
+      21. На странице есть дивы. В них есть текст. Обойдите все дивы и обрежьте
+      тот текст, который в них стоит так, чтобы он стал длиной 10 символов. И
+      добавьте троеточие в конец обрезанного текста.
+    </h3>
+    <div class="task21">Lorem ipsum dolor.</div>
+    <div class="task21">Lorem ipsum dolor Voluptates!</div>
+    <div class="task21">Lorem ipsum dolor sit.</div>
+    <div class="task21">Lorem, ipsum dolor .</div>
+    <div class="task21">Lorem ipsum dolor sit amet consectetur.</div>
+    <div class="task21">Lorem ipsum dolor sit a.</div>
+    <input id="but21" type="submit" value="Обрезать" />
+
+    <script>
+      document.querySelector("#but21").addEventListener("click", function () {
+        let div = document.querySelectorAll(".task21");
+        for (let i = 0; i < div.length; i++) {
+          let str = div[i].textContent.slice(0, 10);
+          div[i].innerHTML = str + "...";
+        }
+      });
+    </script>
+
+    <!-- // ДЗ TASK 22 -->
+    <h3>
+      22. Дан инпут и кнопка. По нажатию на кнопку сгенерируйте случайную строку
+      из 8-ми символов и запишите в инпут.
+    </h3>
+    <input id="string" value="" />
+    <input id="create" type="submit" value="Сгенерировать" />
+    <script>
+      document.querySelector("#create").addEventListener("click", function () {
+        let chrs = "abdehkmnpswxzABDEFGHKMNPQRSTWXZ123456789";
+        let str = "";
+        for (let i = 0; i < 8; i++) {
+          let pos = Math.floor(Math.random() * chrs.length);
+          str += chrs.substring(pos, pos + 1);
+        }
+        document.querySelector("#string").value = str;
+      });
+    </script>
+
+    <!-- // ДЗ TASK 23 -->
+    <h3>
+      23. Дан инпут и кнопка. Пользователь вводит в инпут какую-то строку. По
+      нажатию на кнопку перемешайте введенные символы случайным образом и
+      запишите ее обратно в инпут.
+    </h3>
+    <input id="string1" value="" />
+    <input id="create1" type="submit" value="Перемешать" />
+    <script>
+      document.querySelector("#create1").addEventListener("click", function () {
+        let str = document.querySelector("#string1").value;
+        let str1 = str
+          .split("")
+          .sort(function () {
+            return 0.5 - Math.random();
+          })
+          .join("");
+
+        document.querySelector("#string1").value = str1;
+      });
+    </script>
+
+    <!-- // ДЗ TASK 24 -->
+    <h3>
+      24. Дана ссылка. Дан чекбокс. По нажатию на ссылку меняйте состояние
+      чекбокса с отмеченного на неотмеченное и наоборот.
+    </h3>
+    <a id="a1" href="#a1">Ссылка</a>
+    <input id="ch" type="checkbox" />checkbox
+    <script>
+      let el = document.querySelector("#ch");
+      document.querySelector("#a1").addEventListener("click", function () {
+        if (el.checked) {
+          el.checked = false;
+        } else el.checked = true;
+      });
+    </script>
+
+    <!-- // ДЗ TASK 25 -->
+    <h3>
+      25. Дан инпут. В него вводится температура в градусах Фаренгейта. Сделайте
+      так, чтобы автоматически по мере ввода в абзац под инпутом эта температура
+      выводилась в градусах Цельсия.
+    </h3>
+    <div>Градусы Фаренгейта <input id="dgF" value="" /></div>
+    <div>
+      Градусы Цельсия:
+      <p id="dgC"></p>
+    </div>
+    <script>
+      let dgF = document.querySelector("#dgF");
+      dgF.addEventListener("input", function () {
+        let res = (+dgF.value - 32) / 1.8;
+        document.querySelector("#dgC").innerHTML = res.toFixed(1);
+      });
+    </script>
+
+    <!-- // ДЗ TASK 26 -->
+    <h3>
+      26. Дан инпут, кнопка и абзац. В инпут вводится число. По нажатию на
+      кнопку выведите в абзац факториал этого числа.
+    </h3>
+    <input id="number" value="" />
+    <input id="fact" type="submit" value="Факториал" />
+    <p id="reslt"></p>
+
+    <script>
+      function factorial(n) {
+        return n != 1 ? n * factorial(n - 1) : 1;
+      }
+      document.querySelector("#fact").addEventListener("click", function () {
+        let n = +document.querySelector("#number").value;
+        document.querySelector("#reslt").innerHTML = factorial(n);
+      });
+    </script>
+  </body>
 </html>
