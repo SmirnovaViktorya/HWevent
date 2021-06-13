@@ -62,13 +62,12 @@
     <input id="sum" type="submit" value="sum" />
 
     <script>
+      let sum = document.querySelector("#sum");
+      let term1 = +document.querySelector("#term1").innerHTML;
+      let term2 = +document.querySelector("#term2").innerHTML;
+
       sum.addEventListener("click", function () {
-        alert(
-          `Сумма чисел: ${
-            +document.querySelector("#term1").innerHTML +
-            +document.querySelector("#term2").innerHTML
-          }`
-        );
+        alert(`Сумма чисел: ${term1 + term2}`);
       });
     </script>
 
@@ -105,19 +104,22 @@
 
     <h3>6. По нажатию на кнопку нужно показать список или снова спрятать.</h3>
     <input id="showList" type="submit" value="Показать / Спрятать" />
-    <ul id="list" hidden="false">
+    <ul id="list" class="hidden">
       <li>A</li>
       <li>B</li>
       <li>C</li>
     </ul>
+    <style>
+      .hidden {
+        display: none;
+      }
+    </style>
     <script>
       let list = document.querySelector("#list");
       document
         .querySelector("#showList")
         .addEventListener("click", function () {
-          if (list.hidden) {
-            list.hidden = false;
-          } else list.hidden = true;
+          list.classList.toggle("hidden");
         });
     </script>
 
@@ -189,8 +191,7 @@
     <input id="pow" type="submit" value="Степень" />
     <script>
       document.querySelector("#pow").addEventListener("click", function () {
-        let n = document.querySelector("#num").innerHTML;
-        n = +n;
+        let n = +document.querySelector("#num").innerHTML;
         document.querySelector("#num").innerHTML = n ** 2;
       });
     </script>
@@ -351,7 +352,7 @@
       восклицательный знак. Сделайте так, чтобы это добавление происходило лишь
       по первому нажатию.
     </h3>
-    <div>
+    <div id="task14">
       <p>111</p>
       <p>222</p>
       <p>333</p>
@@ -359,15 +360,16 @@
       <p>555</p>
     </div>
     <script>
-      let elems = document.querySelectorAll("div p");
+      let div = document.querySelector("#task14");
 
-      function foo() {
-        this.innerHTML += "!";
+      function foo(event) {
+        console.log(event.target);
+        let p = event.target;
+        p.innerHTML += "!";
         this.removeEventListener("click", foo);
       }
-      for (let i of elems) {
-        i.addEventListener("click", foo);
-      }
+
+      div.addEventListener("click", foo);
     </script>
 
     <!-- // ДЗ TASK 15 -->
